@@ -1,0 +1,17 @@
+{% extends 'presentation/base.html' %}
+{% block title %} Saludo Page {% endblock%}
+
+{%load static %}
+{% block nav %}  
+<br></br>
+<header class="masthead bg-primary text-white text-center">
+        <div class="container">
+            <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'presentation/img/sanmina.png'%}" alt="">
+            <h1 class="text-uppercase mb-0">Start DJANGO</h1>
+            <hr class="star-light">
+            <h2 class="font-weight-light mb-0">{{name}}</h2>
+        </div>
+</header>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'presentation/base.html' %}
+{% block title %} Add new user {% endblock%}
+{% block nav %} 
+<br></br>
+<section class="bg-primary text-white mb-0" id="about">
+      <div class="container">
+            <div class="col-lg-4 ml-auto"></div>
+            <br>
+            <div class="col-lg-10 ml-auto">
+                    {% if 'nombre' in request.GET %}
+                        <h1> Se registro usuario {{request.GET.nombre}}</h1>
+                    {% endif %}
+                </div>
+                <br>
+        <h2 class="text-center text-uppercase text-white">Agregar usuarios</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+               
+          <div class="col-lg-4 ml-auto">
+            <form action = "{% url 'add' %}" method = "post">
+                {% csrf_token %} <!--asegurar que solo desde mi pagina pueda resivir peticiones.-->
+                <table>
+              {{form.as_table}}
+            </table>
+          </div>
+          <div class="col-lg-6 mr-auto"><input type="submit"></div>
+        </form>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="#">
+            <i class="fas fa-download mr-2"></i>
+            Download Now!
+          </a>
+        </div>
+      </div>
+    </section>      {%endblock%}
+    {% block footer %}<div class = "container"></div>{%endblock%}

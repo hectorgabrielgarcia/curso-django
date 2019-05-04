@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>        
+    <meta charset="UTF-8">
+    <meta name="title" content="Título de la WEB">
+    <meta name="description" content="Descripción de la WEB"> 
+    <title>{% block title %}{% endblock %}</title>
+    
+    
+    {% load static %}
+   
+     
+     <!-- Bootstrap core CSS -->
+    <link href="{% static 'presentation/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'presentation/vendor/fontawesome-free/css/all.min.css ' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Plugin CSS -->
+    <link href="{% static 'presentation/vendor/magnific-popup/magnific-popup.css ' " rel="stylesheet %} " type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'presentation/css/freelancer.min.css ' %} " rel="stylesheet">
+
+    {% block styles %}{% endblock %}
+    
+  </head>  
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">DJANGO - AGENDA</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'contactos' %}">Contact</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'add' %}">ADD</a>
+          </li>
+    
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% block nav %}{% endblock %}
+   
+    
+  <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">2215 John Daniel Drive
+              <br>Clark, MO 65243</p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-fw fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-fw fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-fw fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-fw fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-fw fa-dribbble"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">About Freelancer</h4>
+            <p class="lead mb-0">Freelance is a free to use, open source Bootstrap theme created by
+              <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% block footer %}{% endblock %}
+
+                  <!-- Bootstrap core JavaScript -->
+                  <script src="{% static 'presentation/vendor/jquery/jquery.min.js' %} "></script>
+                  <script src="{% static 'presentation/vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+
+                  <!-- Plugin JavaScript -->
+                  <script src="{% static 'presentation/vendor/jquery-easing/jquery.easing.min.js ' %} "></script>
+                  <script src="{% static 'presentation/vendor/magnific-popup/jquery.magnific-popup.min.js' %} "></script>
+
+                  <!-- Contact Form JavaScript -->
+                  <script src="{% static 'presentation/js/jqBootstrapValidation.js' %} "></script>
+                  
+
+                  <!-- Custom scripts for this template -->
+                  <script src="{% static 'presentation/js/freelancer.min.js ' %} "></script>
+
+                <script src = "{% static 'presentation/vendor/jquery-3.4.0.min.js' %}"></script>
+                   
+            {% block scripts %}{% endblock %}
+    </body>      
+  <footer>
+      
+    </footer>
+</html>

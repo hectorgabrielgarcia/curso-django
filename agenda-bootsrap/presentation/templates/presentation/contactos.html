@@ -1,0 +1,48 @@
+{% extends 'presentation/base.html' %}
+{% block title %} Contacts page {% endblock%}
+{% block nav %} 
+ <br></br><br></br><br></br><br></br>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Contact Page</h2>
+  
+    <section>      
+      <div class = "container-fluid">
+       
+        <table class="table table-striped ">
+            <thead class = "thead-dark">
+            <tr>                      
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Seg. Nombre</th>
+              <th>Apellido Materno</th>
+              <th>Apellido Paterno</th>
+              <th>Telefono Casa.</th>
+              <th>Telefono cel.</th>
+              <th>Email</th>
+              <center><th>Twitter</th></center>
+              <th>Web Page</th>
+              <th>Fecha Creacion:</th>
+              <th>Fecha Modificacion:</th>
+            </tr>    
+          </thead>
+            {% for contactos in contactos %}   
+            <tr>                   
+                  <td>{{contactos.id}}</td>
+                  <td>{{contactos.nombre}}</td>
+                  <td>{{contactos.segundonombre}}</td>
+                  <td>{{contactos.apellidomaterno}}</td>
+                  <td>{{contactos.apelludopaterno}}</td>
+                  <td>{{contactos.telcasa}}</td>
+                  <td>{{contactos.celular}}</td>
+                  <td>{{contactos.email}}</td>
+                  <center><td>{{contactos.twitter|default_if_none:"Sin twitter"}}</td></center>
+                  <center><td>{{contactos.paginaweb|default_if_none:"Sin web page"}}</td></center>
+                  <td>{{contactos.created}}</td>
+                  <td>{{contactos.updated}}</td>           
+            </tr>
+            {%endfor%}
+          </table>
+          </div>
+        </div>
+        </div>
+    </section>
+    {% endblock %}
